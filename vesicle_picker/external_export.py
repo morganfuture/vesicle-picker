@@ -49,9 +49,9 @@ def construct_csparc_dataset(micrograph, pick_indices):
          [[np.uint32(micrograph_shape[0]),
            np.uint32(micrograph_shape[1])]] * n_picks),
         ('location/center_y_frac',
-         pick_indices[0].astype(np.dtype('<f4'))/micrograph_shape[0]),
+         (pick_indices[0].astype(np.dtype('<f4'))/micrograph_shape[0]).astype(np.dtype('<f4))),
         ('location/center_x_frac',
-         pick_indices[1].astype(np.dtype('<f4'))/micrograph_shape[1]),
+         (pick_indices[1].astype(np.dtype('<f4'))/micrograph_shape[1]).astype(np.dtype('<f4))),
         ('location/micrograph_psize_A',
          np.repeat(micrograph_psize, n_picks).astype(np.dtype('<f4')))
     ])
